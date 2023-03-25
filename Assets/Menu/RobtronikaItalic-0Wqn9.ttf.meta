@@ -1,0 +1,22 @@
+fileFormatVersion: 2
+guid: 9ada51b71a46cce458f49910a13c466c
+TrueTypeFontImporter:
+  externalObjects: {}
+  serializedVersion: 4
+  fontSize: 16
+  forceTextureCase: -2
+  characterSpacing: 0
+  characterPadding: 1
+  includeFontData: 1
+  fontNames:
+  - Robtronika
+  fallbackFontReferences:
+  - {fileID: 12800000, guid: fbbbea8e3f4a8c3409c48c775f988e31, type: 3}
+  customCharacters: 
+  fontRenderingMode: 0
+  ascentCalculationMode: 1
+  useLegacyBoundsCalculation: 0
+  shouldRoundAdvanceValue: 1
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
