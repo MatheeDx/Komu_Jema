@@ -3,23 +3,21 @@ using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
 
-public class ItemCube : MonoBehaviour, Item
+public class Teleport : MonoBehaviour, Item
 {
-    private void Awake()
-    {
-        _transform = GetComponent<Transform>();
-    }
+    [SerializeField] Teleport twinTeleport;
+    GameObject player;
 
     public void Use()
     {
-        
+        player.transform.position = new Vector3(twinTeleport.transform.position.x, twinTeleport.transform.position.y, 0);
     }
 
     public void Sleep()
     {
-        if (button != null) 
+        if (button != null)
         {
-            Destroy(button); 
+            Destroy(button);
             button = null;
         }
     }
@@ -34,6 +32,12 @@ public class ItemCube : MonoBehaviour, Item
         text.color = Color.black;
         text.fontSize = 10;
         button.transform.localPosition = new Vector3(0, 2, -3);
+    }
+
+    private void Awake()
+    {
+        _transform = GetComponent<Transform>();
+        player = GameObject.FindGameObjectWithTag("Player");
     }
 
     GameObject button = null;
