@@ -1,18 +1,8 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
-public class ItemInterface : MonoBehaviour
+interface Item
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
+    public void Use();
+    public void Alarm();
+    public void Sleep();
 }
