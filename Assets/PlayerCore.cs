@@ -8,16 +8,9 @@ public class PlayerCore : MonoBehaviour
     [SerializeField] float speedRot;
     Item activeItem;
 
-
-    private void Awake()
-    {
-        _transform = GetComponent<Transform>();
-        activeItem = null;
-    }
-
     void Update()
     {
-        MoveControl();
+        MoveControl(true);
 
         if(Input.GetButtonDown("Use"))
             ItemUse();
@@ -41,26 +34,29 @@ public class PlayerCore : MonoBehaviour
         }
     }
 
-    void MoveControl()
+    void MoveControl(bool isMove)
     {
         float joy = Input.GetAxis("Horizontal");
 
-        if (joy != 0)
+        if (joy != 0 && isMove)
         {
             _transform.position += new Vector3(joy * 0.1f * speedMove, 0, 0);
             if (joy < 0)
-                _transform.rotation = Quaternion.Lerp(_transform.rotation, Quaternion.LookRotation(Vector3.left, Vector3.up), speedRot * Time.deltaTime);
+                _transform.rotation = Quaternion.Lerp(_transform.rotation, Quaternion.LookRotation(new Vector3(-1, 0, -0.01f), Vector3.up), speedRot * Time.deltaTime);
             else
-                _transform.rotation = Quaternion.Lerp(_transform.rotation, Quaternion.LookRotation(Vector3.right, Vector3.up), speedRot * Time.deltaTime);
+                _transform.rotation = Quaternion.Lerp(_transform.rotation, Quaternion.LookRotation(new Vector3(1, 0, -0.01f), Vector3.up), speedRot * Time.deltaTime);
         }
     }
 
     void ItemUse()
     {
         if (activeItem != null)
-        {
             activeItem.Use();
-        }
+    }
+    private void Awake()
+    {
+        _transform = GetComponent<Transform>();
+        activeItem = null;
     }
 
     Transform _transform;
