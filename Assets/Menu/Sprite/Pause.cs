@@ -42,15 +42,14 @@ public class Pause : MonoBehaviour
     }
     void Update()
     {
-        Debug.Log(PausePanelDownBar.transform.position);
-        if (PausePanel.activeSelf == false && OptionsPanel.activeSelf == false) {
-            PausePanelDownBar.transform.position = new Vector3(-1560, -238, 0);
-            PlayTime(); 
-        }
-        if (PausePanelDownBar.transform.position == new Vector3(959, 302, 0))
+        if (Input.GetKeyDown(KeyCode.R))
         {
-            StopTime();
-            Cursor.lockState = CursorLockMode.None;
+            Restart();
+        }
+            Debug.Log(PausePanelDownBar.transform.position);
+        if (PausePanel.activeSelf == false && OptionsPanel.activeSelf == false) {
+            PlayTime();
+            PausePanelDownBar.transform.position = new Vector3(-1560, -238, 0);
         }
         if (Input.GetKeyDown(KeyCode.Escape))
         {
@@ -61,6 +60,7 @@ public class Pause : MonoBehaviour
             if (PausePanel.activeSelf == false)
             {
                 PausePanel.SetActive(true);
+                Invoke("StopTime", 1);
             }
             else if (PausePanel.activeSelf == true)
             {
