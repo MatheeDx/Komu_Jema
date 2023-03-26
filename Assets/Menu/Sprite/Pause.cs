@@ -8,7 +8,7 @@ using UnityEngine.UI;
 public class Pause : MonoBehaviour
 {
     public GameObject PausePanel;
-    public bool menuExit;
+    public GameObject PausePanelDownBar;
     public GameObject OptionsPanel;
     public float timer;
     public GameObject GameOverPanel;
@@ -17,7 +17,7 @@ public class Pause : MonoBehaviour
     [SerializeField] private float time;
     [SerializeField] private Image timerImage;
     [SerializeField] private Text timerText;
-
+    int x, y, z;
     private float _timeLeft = 0f;
     void Start()
     {
@@ -44,22 +44,28 @@ public class Pause : MonoBehaviour
     }
     void Update()
     {
+        Debug.Log(PausePanelDownBar.transform.position);
+        if (PausePanel.activeSelf == false && OptionsPanel.activeSelf == false) {
+            PausePanelDownBar.transform.position = new Vector3(-1560, -238, 0);
+            PlayTime(); 
+        }
+        if (PausePanelDownBar.transform.position == new Vector3(960, 302, 0))
+        {
+            StopTime();
+        }
         if (Input.GetKeyDown(KeyCode.Escape))
         {
             Cursor.visible = true;
             Cursor.lockState = CursorLockMode.None;
             Debug.Log("Вроде работает");
-            menuExit = !menuExit;
 
-            if (PausePanel == menuExit)
+            if (PausePanel.activeSelf == false)
             {
                 PausePanel.SetActive(true);
-                Invoke("StopTime", timer);
             }
-            else
+            else if (PausePanel.activeSelf == true)
             {
                 PausePanel.SetActive(false);
-                Invoke("PlayTime", 0);
 
             }
         }
@@ -80,7 +86,6 @@ public class Pause : MonoBehaviour
     }
     public void BackGame()
     {
-        Invoke("PlayTime", 0);
         PausePanel.SetActive(false);
     }
     public void BackOptions()

@@ -156,7 +156,7 @@ RectTransform:
   - {fileID: 972746949}
   - {fileID: 610098218}
   m_Father: {fileID: 1470732996}
-  m_RootOrder: 3
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -1949,7 +1949,7 @@ RectTransform:
   - {fileID: 93101805}
   - {fileID: 1244755943}
   m_Father: {fileID: 1470732996}
-  m_RootOrder: 2
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -4308,7 +4308,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &1109102373
 RectTransform:
   m_ObjectHideFlags: 0
@@ -4325,7 +4325,7 @@ RectTransform:
   - {fileID: 1508488840}
   - {fileID: 1092371880}
   m_Father: {fileID: 1470732996}
-  m_RootOrder: 0
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -4345,7 +4345,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   PausePanel: {fileID: 1109102372}
-  menuExit: 0
+  PausePanelDownBar: {fileID: 0}
   OptionsPanel: {fileID: 0}
   timer: 0
   GameOverPanel: {fileID: 0}
@@ -5544,7 +5544,7 @@ RectTransform:
   - {fileID: 488725980}
   - {fileID: 720184291}
   m_Father: {fileID: 1470732996}
-  m_RootOrder: 1
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
@@ -5914,11 +5914,11 @@ RectTransform:
   m_LocalScale: {x: 0, y: 0, z: 0}
   m_ConstrainProportionsScale: 0
   m_Children:
+  - {fileID: 1993447435}
   - {fileID: 1109102373}
   - {fileID: 1306363058}
   - {fileID: 532581644}
   - {fileID: 417461}
-  - {fileID: 1993447435}
   - {fileID: 1699279857}
   m_Father: {fileID: 0}
   m_RootOrder: 7
@@ -5941,7 +5941,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   PausePanel: {fileID: 1109102372}
-  menuExit: 0
+  PausePanelDownBar: {fileID: 1092371879}
   OptionsPanel: {fileID: 1306363054}
   timer: 2
   GameOverPanel: {fileID: 532581643}
@@ -7723,7 +7723,7 @@ RectTransform:
   m_GameObject: {fileID: 1958481611}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 0, y: 0, z: 0}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1308577685}
@@ -7939,7 +7939,7 @@ RectTransform:
   - {fileID: 943452677}
   - {fileID: 1577996567}
   m_Father: {fileID: 1470732996}
-  m_RootOrder: 4
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
