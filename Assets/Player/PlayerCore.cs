@@ -46,7 +46,7 @@ public class PlayerCore : MonoBehaviour
         if (joy != 0 && isMove)
         {
             anim.SetBool("isWalking", true);
-            _transform.position += new Vector3(joy * 0.1f * speedMove, 0, 0);
+            _transform.position += new Vector3(joy * Time.deltaTime * speedMove, 0, 0);
             if (joy < 0)
                 _transform.rotation = Quaternion.Lerp(_transform.rotation, Quaternion.LookRotation(new Vector3(-1, 0, -0.01f), Vector3.up), speedRot * Time.deltaTime);
             else
