@@ -10,7 +10,8 @@ public class Teleport : MonoBehaviour, Item
 
     public void Use()
     {
-        player.transform.position = new Vector3(twinTeleport.transform.position.x, twinTeleport.transform.position.y, 0);
+        player.transform.position = new Vector3(twinTeleport.transform.position.x, twinTeleport.transform.position.y, 1.5f);
+
     }
 
     public void Sleep()
@@ -31,7 +32,7 @@ public class Teleport : MonoBehaviour, Item
         text.alignment = TextAlignmentOptions.Center;
         text.color = Color.white;
         text.fontSize = 10;
-        button.transform.localPosition = new Vector3(0, 8, -6);
+        button.transform.localPosition = new Vector3(0, 8, -2);
     }
 
     private void Awake()

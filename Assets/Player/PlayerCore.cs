@@ -6,6 +6,9 @@ public class PlayerCore : MonoBehaviour
 {
     [SerializeField] float speedMove;
     [SerializeField] float speedRot;
+    [SerializeField] Camera _cam;
+    [SerializeField] Vector3 camPos;
+    [SerializeField] float camSpeed;
     float joy;
     bool isMoving;
     bool isUsing;
@@ -18,7 +21,8 @@ public class PlayerCore : MonoBehaviour
 
         if (Input.GetButtonDown("Use"))
             StartCoroutine(ItemUse());
-        
+
+        CameraMove();
     }
 
     private void OnTriggerEnter(Collider other)
@@ -54,6 +58,11 @@ public class PlayerCore : MonoBehaviour
         } else {
             anim.SetBool("isWalking", false);
         }
+    }
+
+    private void CameraMove()
+    {
+        _cam.transform.position = Vector3.Lerp(_cam.transform.position, new Vector3(_transform.position.x, _transform.position.y, 0) + camPos, camSpeed * Time.deltaTime);
     }
 
     private IEnumerator ItemUse()
@@ -100,6 +109,7 @@ public class PlayerCore : MonoBehaviour
         activeItem = null;
     }
 
+    
     Animator anim;
     Transform _transform;
 }
