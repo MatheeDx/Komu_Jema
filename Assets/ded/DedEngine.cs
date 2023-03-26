@@ -116,7 +116,7 @@ public class DedEngine : MonoBehaviour
     private void Detector()
     {
         RaycastHit hit;
-        if (Physics.Raycast(_transform.position, _transform.forward, out hit)) {
+        if (Physics.Raycast(_transform.position + new Vector3(0, 2, 0), _transform.forward, out hit)) {
             if(hit.collider.tag == "Player")
             {
                 Debug.Log(123321);
