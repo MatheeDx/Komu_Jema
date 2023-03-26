@@ -2,7 +2,6 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
-using System.Collections;
 using UnityEngine.UI;
 
 public class Pause : MonoBehaviour
@@ -17,7 +16,6 @@ public class Pause : MonoBehaviour
     [SerializeField] private float time;
     [SerializeField] private Image timerImage;
     [SerializeField] private Text timerText;
-    int x, y, z;
     private float _timeLeft = 0f;
     void Start()
     {
@@ -49,9 +47,10 @@ public class Pause : MonoBehaviour
             PausePanelDownBar.transform.position = new Vector3(-1560, -238, 0);
             PlayTime(); 
         }
-        if (PausePanelDownBar.transform.position == new Vector3(960, 302, 0))
+        if (PausePanelDownBar.transform.position == new Vector3(959, 302, 0))
         {
             StopTime();
+            Cursor.lockState = CursorLockMode.None;
         }
         if (Input.GetKeyDown(KeyCode.Escape))
         {

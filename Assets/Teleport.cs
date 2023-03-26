@@ -7,7 +7,6 @@ public class Teleport : MonoBehaviour, Item
 {
     [SerializeField] Teleport twinTeleport;
     GameObject player;
-
     public void Use()
     {
         player.transform.position = new Vector3(twinTeleport.transform.position.x, twinTeleport.transform.position.y, 1.5f);
