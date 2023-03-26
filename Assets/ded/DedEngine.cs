@@ -100,7 +100,7 @@ public class DedEngine : MonoBehaviour
 
     private IEnumerator Instructions()
     {
-        actions.Add(new MoveToInSec(_transform, 1, 6));
+        actions.Add(new MoveToInSec(_transform, 1, 3));
         actions.Add(new Wait(_transform, 2));
         actions.Add(new MoveToInSec(_transform, -1, 3));
         actions.Add(new Wait(_transform, 2));
