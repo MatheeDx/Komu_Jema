@@ -12,6 +12,8 @@ public class Pause : MonoBehaviour
     public GameObject OptionsPanel;
     public float timer;
     public GameObject GameOverPanel;
+    public GameObject HUD;
+    public GameObject ZTM;
     [SerializeField] private float time;
     [SerializeField] private Image timerImage;
     [SerializeField] private Text timerText;
@@ -19,10 +21,12 @@ public class Pause : MonoBehaviour
     private float _timeLeft = 0f;
     void Start()
     {
+        HUD.SetActive(true);
         GameOverPanel.SetActive(false);
         PausePanel.SetActive(false);
         _timeLeft = time;
-        StartCoroutine(StartTimer());
+        Invoke("StTimer", timer);
+        Invoke("Zatem", timer);
     }
     private IEnumerator StartTimer()
     {
@@ -60,6 +64,10 @@ public class Pause : MonoBehaviour
             }
         }
     }
+    public void StTimer()
+    {
+        StartCoroutine(StartTimer());
+    }
     public void ExitGame()
     {
         Debug.Log("»гра всЄ");
@@ -72,11 +80,8 @@ public class Pause : MonoBehaviour
     }
     public void BackGame()
     {
-        PausePanel.SetActive(false);
-        menuExit = !menuExit;
-        Cursor.visible = false;
-        Cursor.lockState = CursorLockMode.Locked;
         Invoke("PlayTime", 0);
+        PausePanel.SetActive(false);
     }
     public void BackOptions()
     {
@@ -95,5 +100,9 @@ public class Pause : MonoBehaviour
     void PlayTime()
     {
         Time.timeScale = 1f;
+    }
+    void Zatem()
+    {
+        ZTM.SetActive(false);
     }
 }

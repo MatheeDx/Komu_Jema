@@ -8,7 +8,9 @@ public class Options : MonoBehaviour
 {
     public Dropdown resolution0;
     public Dropdown quallity0;
-
+    public GameObject panelOptions;
+    public GameObject panelPause;
+    public bool panelswitch;
     Resolution[] resolutions;
 
     void Start()
@@ -63,5 +65,12 @@ public class Options : MonoBehaviour
             Screen.fullScreen = System.Convert.ToBoolean(PlayerPrefs.GetInt("FullScreenPreference"));
         else
             Screen.fullScreen = true;
+    }
+    public void Back()
+    {
+        panelswitch = !panelswitch;
+        panelOptions.SetActive(false);
+        panelPause.SetActive(true);
+        
     }
 }
