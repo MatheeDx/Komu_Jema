@@ -29,9 +29,9 @@ public class Teleport : MonoBehaviour, Item
         text.text = "E";
         button.transform.SetParent(_transform);
         text.alignment = TextAlignmentOptions.Center;
-        text.color = Color.black;
+        text.color = Color.white;
         text.fontSize = 10;
-        button.transform.localPosition = new Vector3(0, 2, -3);
+        button.transform.localPosition = new Vector3(0, 8, -6);
     }
 
     private void Awake()
