@@ -33,7 +33,7 @@ public class ItemPickup : MonoBehaviour, Item
         text.alignment = TextAlignmentOptions.Center;
         text.color = Color.white;
         text.fontSize = 10;
-        button.transform.localPosition = new Vector3(0, 8, -2);
+        button.transform.localPosition = new Vector3(19.46f, -4.1f, 0.3f);
     }
 
     private void Awake()
