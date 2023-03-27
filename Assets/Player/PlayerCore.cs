@@ -18,6 +18,7 @@ public class PlayerCore : MonoBehaviour
     public bool isMoving;
     bool isUsing;
     Item activeItem;
+    float questItem;
 
     void FixedUpdate()
     {
