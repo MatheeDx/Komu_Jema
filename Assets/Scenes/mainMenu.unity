@@ -1167,14 +1167,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.45882353, g: 0.4509804, b: 0.8509804, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Texture: {fileID: 0}
+  m_Texture: {fileID: 2800000, guid: 4b6fa5b7743b99e4eae26f86e82019e8, type: 3}
   m_UVRect:
     serializedVersion: 2
     x: 0
@@ -2040,7 +2040,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   PausePanel: {fileID: 515986146}
-  menuExit: 0
+  PausePanelDownBar: {fileID: 0}
   OptionsPanel: {fileID: 1619943062}
   timer: 0
   GameOverPanel: {fileID: 0}
@@ -6514,7 +6514,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   PausePanel: {fileID: 515986146}
-  menuExit: 0
+  PausePanelDownBar: {fileID: 0}
   OptionsPanel: {fileID: 1619943062}
   timer: 2
   GameOverPanel: {fileID: 1514447091}
