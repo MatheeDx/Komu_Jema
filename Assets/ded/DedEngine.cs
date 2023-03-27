@@ -6,6 +6,10 @@ public class DedEngine : MonoBehaviour
 {
     float speedRot = 5.41f;
     float speedMove = 2.1f;
+    public float agr;
+    public float agrSpeed = 100;
+    public float maxAgr = 20;
+    float dist = 120f;
 
     public interface ICommand
     {
@@ -85,9 +89,9 @@ public class DedEngine : MonoBehaviour
             timer += Time.deltaTime;
             obj.position += new Vector3(dir * Time.deltaTime * speedMove, 0, 0);
             if (dir < 0)
-                obj.rotation = Quaternion.Lerp(obj.rotation, Quaternion.LookRotation(new Vector3(-1, 0, -0.01f), Vector3.up), speedRot * Time.deltaTime);
+                obj.rotation = Quaternion.Lerp(obj.rotation, Quaternion.LookRotation(new Vector3(-1, 0, 0), Vector3.up), speedRot * Time.deltaTime);
             else
-                obj.rotation = Quaternion.Lerp(obj.rotation, Quaternion.LookRotation(new Vector3(1, 0, -0.01f), Vector3.up), speedRot * Time.deltaTime);
+                obj.rotation = Quaternion.Lerp(obj.rotation, Quaternion.LookRotation(new Vector3(1, 0, 0), Vector3.up), speedRot * Time.deltaTime);
             yield return new WaitForEndOfFrame();
         }
         anim.SetBool("isWalking", false);
@@ -129,8 +133,8 @@ public class DedEngine : MonoBehaviour
                 T = 3;
             }
         }
-        Vector2 up = new Vector3(3.47f, 12.68f, 1.4f);
-        Vector3 down = new Vector3(2.12f, -0.66f, 1.4f);
+        Vector2 up = new Vector3(3.47f, 12.68f, 1.3f);
+        Vector3 down = new Vector3(2.12f, -0.66f, 1.3f);
         Transform m_Transform;
         Teleport tele;
     }
@@ -159,10 +163,16 @@ public class DedEngine : MonoBehaviour
     private void Detector()
     {
         RaycastHit hit;
-        if (Physics.Raycast(_transform.position + new Vector3(0, 2, 0), _transform.forward, out hit)) {
+        if (Physics.SphereCast(_transform.position + new Vector3(0, 2, 0), 3f, _transform.forward, out hit, Mathf.Infinity)) {
             if(hit.collider.tag == "Player")
             {
-                //
+                Debug.Log(hit.distance);
+                agr -= agrSpeed * (hit.distance / dist) * Time.deltaTime;
+            }
+        } else {
+            if(agr < maxAgr)
+            {
+                agr += 1 * Time.deltaTime;
             }
         }
     }
@@ -182,6 +192,7 @@ public class DedEngine : MonoBehaviour
         up = true;
         _transform = GetComponent<Transform>();
         actions = new List<ICommand>();
+        agr = maxAgr;
     }
     private void OnTriggerEnter(Collider other)
     {
