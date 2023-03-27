@@ -1,0 +1,54 @@
+using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+using TMPro;
+
+public class Window : MonoBehaviour, Item
+{
+    [SerializeField] Animator anim = null;
+    [SerializeField] Vector3 btnPos;
+    [SerializeField] GameObject win;
+
+    public void Use()
+    {
+        StartCoroutine(Win());
+    }
+
+    IEnumerator Win()
+    {
+        transform.GetComponent<Renderer>().material.color = Color.white;
+        yield return new WaitForSeconds(5);
+        win.SetActive(true);
+    }
+
+    public void Sleep()
+    {
+        if (button != null)
+        {
+            Destroy(button);
+            button = null;
+        }
+    }
+
+    public void Alarm()
+    {
+        button = new GameObject(name);
+        TextMeshPro text = button.AddComponent<TextMeshPro>();
+        text.text = "—бой в матрице!";
+        button.transform.SetParent(_transform);
+        text.alignment = TextAlignmentOptions.Center;
+        text.color = Color.white;
+        text.fontSize = 10;
+        button.transform.localPosition = new Vector3(0, 0, 0) + new Vector3(0, 0.005f, 0.01f);
+    }
+
+    private void Awake()
+    {
+        _transform = GetComponent<Transform>();
+        player = GameObject.FindGameObjectWithTag("Player");
+    }
+
+    GameObject player;
+    GameObject button = null;
+    Transform _transform;
+}

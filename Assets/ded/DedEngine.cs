@@ -11,7 +11,7 @@ public class DedEngine : MonoBehaviour
     public float agr;
     public float agrSpeed = 100;
     public float maxAgr = 20;
-    float dist = 120f;
+    float dist = 60f;
    [SerializeField] private Image TriggerMoment;
     public GameObject GameOverPanel;
     float trig;
@@ -174,9 +174,9 @@ public class DedEngine : MonoBehaviour
                 agr += agrSpeed * (hit.distance / dist) * Time.deltaTime;
             }
         } else {
-            if(agr < maxAgr)
+            if(agr > 0)
             {
-                agr += 1 * Time.deltaTime;
+                agr -= 1 * Time.deltaTime;
             }
         }
     }
@@ -207,6 +207,15 @@ public class DedEngine : MonoBehaviour
         actions = new List<ICommand>();
         agr = 0;
     }
+
+    private void OnCollisionEnter(Collision collision)
+    {
+        if (collision.gameObject.tag == "Player")
+        {
+            agr += agrSpeed * Time.deltaTime;
+        }
+    }
+
     private void OnTriggerEnter(Collider other)
     {
         if (other.gameObject.tag == "Item" && other.TryGetComponent(out Teleport item))

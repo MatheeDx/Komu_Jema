@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.18316247, g: 0.22672808, b: 0.29436713, a: 1}
+  m_IndirectSpecularColor: {r: 0.1831621, g: 0.22672734, b: 0.29436624, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -380,6 +380,10 @@ PrefabInstance:
       propertyPath: m_Materials.Array.data[0]
       value: 
       objectReference: {fileID: 2100000, guid: e13d56f53606b6b4a903ecb13b9e3bc4, type: 2}
+    - target: {fileID: -7029948723529949830, guid: a4c102ffeebc25d4391762e59f296caf, type: 3}
+      propertyPath: m_TagString
+      value: Item
+      objectReference: {fileID: 0}
     - target: {fileID: -4683669308469848369, guid: a4c102ffeebc25d4391762e59f296caf, type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
@@ -2990,6 +2994,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1de3428716c7220498bd61476ec8aa07, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  btnPos: {x: 0, y: 0, z: 0}
   key: {fileID: 0}
   door: {fileID: 1120331660}
 --- !u!65 &341136588
@@ -4014,6 +4019,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1de3428716c7220498bd61476ec8aa07, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  btnPos: {x: 0, y: 0, z: 0}
   key: {fileID: 0}
   door: {fileID: 1405866250}
 --- !u!65 &536643330
@@ -6234,6 +6240,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1de3428716c7220498bd61476ec8aa07, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  btnPos: {x: 0, y: 0, z: 0}
   key: {fileID: 0}
   door: {fileID: 8760499482729245302}
 --- !u!65 &873213721
@@ -8414,6 +8421,25 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1356015719}
   m_CullTransparentMesh: 1
+--- !u!1 &1359810028 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 5251919869459899775, guid: 5617532ef5af8c848a39472ff22d62a8, type: 3}
+  m_PrefabInstance: {fileID: 1397429334}
+  m_PrefabAsset: {fileID: 0}
+--- !u!136 &1359810029
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1359810028}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  m_Radius: 1.5947814
+  m_Height: 6.60786
+  m_Direction: 2
+  m_Center: {x: -5.400682e-17, y: 2.6073213, z: 0.1240499}
 --- !u!1001 &1388857550
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -10605,6 +10631,39 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1648485885}
   m_CullTransparentMesh: 1
+--- !u!1 &1648915615 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: -7029948723529949830, guid: a4c102ffeebc25d4391762e59f296caf, type: 3}
+  m_PrefabInstance: {fileID: 13495076}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1648915619
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1648915615}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f319b8e2fc52fe14daac56174e64cf55, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  anim: {fileID: 0}
+  btnPos: {x: 0, y: 0, z: 0}
+  win: {fileID: 1705715095}
+--- !u!65 &1648915620
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1648915615}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.020000001, y: 0.034264874, z: 0.038190484}
+  m_Center: {x: -0.000000007812992, y: -0.0071324315, z: 0.010422166}
 --- !u!1001 &1651715200
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -10776,6 +10835,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1de3428716c7220498bd61476ec8aa07, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  btnPos: {x: 0, y: 0, z: 0}
   key: {fileID: 11400000, guid: 20df48fe23a16bc4ea189093bfb85910, type: 2}
   door: {fileID: 1515427562}
 --- !u!65 &1663314268
@@ -15240,10 +15300,10 @@ CapsuleCollider:
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_Enabled: 1
-  m_Radius: 0.874773
+  m_Radius: 1.0561224
   m_Height: 6.8562994
   m_Direction: 1
-  m_Center: {x: 0.062444687, y: 3.397716, z: 0}
+  m_Center: {x: 0.0790131, y: 3.397716, z: -1.136824e-11}
 --- !u!95 &6008344587469605041
 Animator:
   serializedVersion: 4
