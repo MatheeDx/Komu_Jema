@@ -2,12 +2,15 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
+using UnityEngine.UI;
 
 public class Window : MonoBehaviour, Item
 {
     [SerializeField] Animator anim = null;
     [SerializeField] Vector3 btnPos;
     [SerializeField] GameObject win;
+    public GameObject svet;
+    public Text tasks;
 
     public void Use()
     {
@@ -17,7 +20,9 @@ public class Window : MonoBehaviour, Item
     IEnumerator Win()
     {
         transform.GetComponent<Renderer>().material.color = Color.white;
-        yield return new WaitForSeconds(5);
+        svet.gameObject.SetActive(false);
+        tasks.text = "1/1";
+        yield return new WaitForSeconds(4);
         win.SetActive(true);
     }
 
