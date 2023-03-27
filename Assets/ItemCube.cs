@@ -51,7 +51,7 @@ public class ItemCube : MonoBehaviour, Item
         text.alignment = TextAlignmentOptions.Center;
         text.color = Color.white;
         text.fontSize = 10;
-        button.transform.localPosition = new Vector3(0, 8, -2) + btnPos;
+        button.transform.localPosition = new Vector3(0, 0, 0) + btnPos;
     }
 
     private void Awake()

@@ -129,8 +129,8 @@ public class DedEngine : MonoBehaviour
                 T = 3;
             }
         }
-        Vector2 up = new Vector3(3.47f, 12.68f, 1f);
-        Vector3 down = new Vector3(2.12f, -0.66f, 1f);
+        Vector2 up = new Vector3(3.47f, 12.68f, 1.4f);
+        Vector3 down = new Vector3(2.12f, -0.66f, 1.4f);
         Transform m_Transform;
         Teleport tele;
     }
@@ -141,9 +141,9 @@ public class DedEngine : MonoBehaviour
         actions.Add(new MoveToInSec(_transform, -1, 9f));
         actions.Add(new Wait(_transform, 2));
         actions.Add(new UseStairs(_transform));
-        actions.Add(new MoveToInSec(_transform, -1, 9f));
+        actions.Add(new MoveToInSec(_transform, -1, 10f));
         actions.Add(new Wait(_transform, 3));
-        actions.Add(new MoveToInSec(_transform, 1, 9f));
+        actions.Add(new MoveToInSec(_transform, 1, 10f));
         actions.Add(new UseStairs(_transform));
         actions.Add(new MoveToInSec(_transform, 1, 9f));
 
