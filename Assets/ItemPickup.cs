@@ -8,11 +8,46 @@ public class ItemPickup : MonoBehaviour, Item
 {
     GameObject player;
     [SerializeField] QItem item;
+    public string _text;
+    public string _temp;
+    public Vector3 btnPos;
+    public QItem _item;
 
     public void Use()
     {
-        player.GetComponent<Inventory>().AddItem(item);
-        Destroy(gameObject);
+        if (_item == null)
+        {
+            player.GetComponent<Inventory>().AddItem(item);
+            Destroy(gameObject);
+        }
+        else
+        {
+            if (ItemCheck(_item))
+            {
+                player.GetComponent<Inventory>().AddItem(item);
+                Destroy(gameObject);
+            }
+            else
+                button.GetComponent<TextMeshPro>().text = _temp;          
+        }
+            
+        
+    }
+
+    bool ItemCheck(QItem item)
+    {
+        List<QItem> items = player.GetComponent<Inventory>().inventoryItems;
+        if (items.Count == 0)
+            return false;
+
+        foreach (QItem ones in items)
+        {
+            if (ones.id == item.id)
+            {
+                return true;
+            }
+        }
+        return false;
     }
 
     public void Sleep()
@@ -28,12 +63,12 @@ public class ItemPickup : MonoBehaviour, Item
     {
         button = new GameObject(name);
         TextMeshPro text = button.AddComponent<TextMeshPro>();
-        text.text = "E";
+        text.text = _text;
         button.transform.SetParent(_transform);
         text.alignment = TextAlignmentOptions.Center;
         text.color = Color.white;
         text.fontSize = 10;
-        button.transform.localPosition = new Vector3(19.46f, -4.1f, 0.3f);
+        button.transform.localPosition = btnPos;
     }
 
     private void Awake()

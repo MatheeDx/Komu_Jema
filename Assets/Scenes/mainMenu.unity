@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.18028378, g: 0.22571412, b: 0.30692285, a: 1}
+  m_IndirectSpecularColor: {r: 0.18028334, g: 0.22571328, b: 0.3069217, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -668,8 +668,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -61.380005, y: -4.800049}
-  m_SizeDelta: {x: 961.8, y: 137.1}
+  m_AnchoredPosition: {x: -72, y: -4.800049}
+  m_SizeDelta: {x: 997.3, y: 137.1}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &127758431
 MonoBehaviour:
@@ -693,7 +693,7 @@ MonoBehaviour:
       m_Calls: []
   m_FontData:
     m_Font: {fileID: 12800000, guid: 3b8d7931951b799438a8e9f26ca48b48, type: 3}
-    m_FontSize: 116
+    m_FontSize: 110
     m_FontStyle: 0
     m_BestFit: 0
     m_MinSize: 1
@@ -704,7 +704,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Best Game
+  m_Text: all simulation
 --- !u!222 &127758432
 CanvasRenderer:
   m_ObjectHideFlags: 0

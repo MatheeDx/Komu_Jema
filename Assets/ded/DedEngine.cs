@@ -208,7 +208,7 @@ public class DedEngine : MonoBehaviour
         agr = 0;
     }
 
-    private void OnCollisionEnter(Collision collision)
+    private void OnCollisionStay(Collision collision)
     {
         if (collision.gameObject.tag == "Player")
         {
@@ -226,9 +226,13 @@ public class DedEngine : MonoBehaviour
             Debug.Log(tele);
         }
     }
+
+
     public void GameOver()
     {
         GameOverPanel.SetActive(true);
+        GameObject player = GameObject.FindGameObjectWithTag("Player");
+        player.GetComponent<PlayerCore>().isMoving = false;
         Invoke("StopTime", 0);
     }
 
