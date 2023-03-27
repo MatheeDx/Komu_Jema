@@ -10,7 +10,7 @@ public class PlayerCore : MonoBehaviour
     [SerializeField] Vector3 camPos;
     [SerializeField] float camSpeed;
     float joy;
-    bool isMoving;
+    public bool isMoving;
     bool isUsing;
     Item activeItem;
 
@@ -18,7 +18,6 @@ public class PlayerCore : MonoBehaviour
     {
         MoveControl(isMoving);
         //Crouch(isUsing);
-
         if (Input.GetButtonDown("Use"))
             StartCoroutine(ItemUse());
 
@@ -73,9 +72,9 @@ public class PlayerCore : MonoBehaviour
             isMoving = false;
             isUsing = true;
             yield return new WaitForSeconds(1.5f);
-            activeItem.Use();
             isMoving = true;
             isUsing = false;
+            activeItem.Use();
         }
     }
 

@@ -5,7 +5,7 @@ using UnityEngine;
 
 public class Teleport : MonoBehaviour, Item
 {
-    [SerializeField] Teleport twinTeleport;
+    public Teleport twinTeleport;
     GameObject player;
     public void Use()
     {

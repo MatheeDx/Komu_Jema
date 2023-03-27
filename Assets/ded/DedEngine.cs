@@ -98,12 +98,55 @@ public class DedEngine : MonoBehaviour
         StartCoroutine(moveToInSec(m_Transform, m_To, timer));
     }
 
+    public bool up;
+    public class UseStairs : ICommand
+    {
+        public UseStairs(Transform obj)
+        {
+            m_Transform = obj;
+            tele = obj.GetComponent<Teleport>();
+
+        }
+        public void Execute()
+        {
+            
+            if (m_Transform.GetComponent<DedEngine>().up)
+            {
+                m_Transform.position = down;
+                m_Transform.GetComponent<DedEngine>().up = false;
+
+            } else
+            {
+                m_Transform.position = up;
+                m_Transform.GetComponent<DedEngine>().up = true;
+            }
+        }
+        public float T
+        {
+            get { return 1; }
+            set
+            {
+                T = 3;
+            }
+        }
+        Vector2 up = new Vector3(3.47f, 12.68f, 1f);
+        Vector3 down = new Vector3(2.12f, -0.66f, 1f);
+        Transform m_Transform;
+        Teleport tele;
+    }
+
     private IEnumerator Instructions()
     {
-        actions.Add(new MoveToInSec(_transform, 1, 3));
+        actions.Add(new Wait(_transform, 3));
+        actions.Add(new MoveToInSec(_transform, -1, 9f));
         actions.Add(new Wait(_transform, 2));
-        actions.Add(new MoveToInSec(_transform, -1, 3));
-        actions.Add(new Wait(_transform, 2));
+        actions.Add(new UseStairs(_transform));
+        actions.Add(new MoveToInSec(_transform, -1, 9f));
+        actions.Add(new Wait(_transform, 3));
+        actions.Add(new MoveToInSec(_transform, 1, 9f));
+        actions.Add(new UseStairs(_transform));
+        actions.Add(new MoveToInSec(_transform, 1, 9f));
+
 
         while (true)
             foreach (ICommand act in actions)
@@ -119,7 +162,7 @@ public class DedEngine : MonoBehaviour
         if (Physics.Raycast(_transform.position + new Vector3(0, 2, 0), _transform.forward, out hit)) {
             if(hit.collider.tag == "Player")
             {
-                Debug.Log(123321);
+                //
             }
         }
     }
@@ -136,10 +179,31 @@ public class DedEngine : MonoBehaviour
 
     private void Awake()
     {
+        up = true;
         _transform = GetComponent<Transform>();
         actions = new List<ICommand>();
     }
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.gameObject.tag == "Item" && other.TryGetComponent(out Teleport item))
+        {
+            
+            tele.x = item.twinTeleport.transform.position.x;
+            tele.y = item.twinTeleport.transform.position.y;
+            Debug.Log(tele);
+        }
+    }
 
+    //private void OnTriggerExit(Collider other)
+    //{
+    //    if (other.gameObject.tag == "Item" && other.TryGetComponent(out Item item))
+    //    {
+    //        tele.x = _transform.position.x;
+    //        tele.y = _transform.position.y;
+    //    }
+    //}
+
+    Vector2 tele;
     List<ICommand> actions;
     Transform _transform;
 }

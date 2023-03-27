@@ -46,7 +46,6 @@ public class Pause : MonoBehaviour
         {
             Restart();
         }
-            Debug.Log(PausePanelDownBar.transform.position);
         if (PausePanel.activeSelf == false && OptionsPanel.activeSelf == false) {
             PlayTime();
             PausePanelDownBar.transform.position = new Vector3(-1560, -238, 0);
