@@ -7,9 +7,12 @@ public class Teleport : MonoBehaviour, Item
 {
     [SerializeField] Teleport twinTeleport;
     GameObject player;
+    public GameObject target;
     public void Use()
     {
+        target.transform.GetComponent<AudioSource>().enabled = true;
         player.transform.position = new Vector3(twinTeleport.transform.position.x, twinTeleport.transform.position.y, 1.5f);
+        Invoke("sound", 1);
 
     }
 
@@ -39,7 +42,11 @@ public class Teleport : MonoBehaviour, Item
         _transform = GetComponent<Transform>();
         player = GameObject.FindGameObjectWithTag("Player");
     }
-
+    public void sound()
+    {
+        target.transform.GetComponent<AudioSource>().enabled = false;
+    }
     GameObject button = null;
     Transform _transform;
+
 }

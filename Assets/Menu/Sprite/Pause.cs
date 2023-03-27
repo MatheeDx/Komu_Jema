@@ -19,6 +19,7 @@ public class Pause : MonoBehaviour
     private float _timeLeft = 0f;
     void Start()
     {
+        ZTM.SetActive(true);
         HUD.SetActive(true);
         GameOverPanel.SetActive(false);
         PausePanel.SetActive(false);

@@ -4,11 +4,16 @@ using UnityEngine;
 
 public class PlayerCore : MonoBehaviour
 {
+    public GameObject playerrr;
     [SerializeField] float speedMove;
     [SerializeField] float speedRot;
     [SerializeField] Camera _cam;
     [SerializeField] Vector3 camPos;
     [SerializeField] float camSpeed;
+    public AudioSource source;
+    public AudioClip clip;
+    bool sound=false;
+    float i = 0.3f;
     float joy;
     bool isMoving;
     bool isUsing;
@@ -21,7 +26,7 @@ public class PlayerCore : MonoBehaviour
 
         if (Input.GetButtonDown("Use"))
             StartCoroutine(ItemUse());
-
+       
         CameraMove();
     }
 
@@ -46,17 +51,23 @@ public class PlayerCore : MonoBehaviour
     void MoveControl(bool isMove)
     {
         joy = Input.GetAxis("Horizontal");
-
         if (joy != 0 && isMove)
         {
             anim.SetBool("isWalking", true);
+            transform.GetComponent<AudioSource>().enabled = true;
             _transform.position += new Vector3(joy * Time.deltaTime * speedMove, 0, 0);
             if (joy < 0)
+            { 
                 _transform.rotation = Quaternion.Lerp(_transform.rotation, Quaternion.LookRotation(new Vector3(-1, 0, -0.01f), Vector3.up), speedRot * Time.deltaTime);
+            }
             else
+            {
                 _transform.rotation = Quaternion.Lerp(_transform.rotation, Quaternion.LookRotation(new Vector3(1, 0, -0.01f), Vector3.up), speedRot * Time.deltaTime);
+            }
         } else {
             anim.SetBool("isWalking", false);
+            transform.GetComponent<AudioSource>().enabled = false;
+
         }
     }
 
@@ -109,7 +120,10 @@ public class PlayerCore : MonoBehaviour
         activeItem = null;
     }
 
-    
+    public void PlaySteps()
+    {
+        source.Play();
+    }
     Animator anim;
     Transform _transform;
 }
