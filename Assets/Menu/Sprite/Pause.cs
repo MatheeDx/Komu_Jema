@@ -81,7 +81,7 @@ public class Pause : MonoBehaviour
     public void GameOver()
     {
         GameOverPanel.SetActive(true);
-        Invoke("StopTime", timer);
+        Invoke("StopTime", 0);
     }
     public void BackGame()
     {

@@ -1,6 +1,8 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 public class DedEngine : MonoBehaviour
 {
@@ -10,7 +12,9 @@ public class DedEngine : MonoBehaviour
     public float agrSpeed = 100;
     public float maxAgr = 20;
     float dist = 120f;
-
+   [SerializeField] private Image TriggerMoment;
+    public GameObject GameOverPanel;
+    float trig;
     public interface ICommand
     {
         public void Execute();
@@ -167,7 +171,7 @@ public class DedEngine : MonoBehaviour
             if(hit.collider.tag == "Player")
             {
                 Debug.Log(hit.distance);
-                agr -= agrSpeed * (hit.distance / dist) * Time.deltaTime;
+                agr += agrSpeed * (hit.distance / dist) * Time.deltaTime;
             }
         } else {
             if(agr < maxAgr)
@@ -185,6 +189,15 @@ public class DedEngine : MonoBehaviour
     private void Update()
     {
         Detector();
+        if (agr < maxAgr)
+        {
+            trig = (agr / maxAgr);
+            TriggerMoment.fillAmount = trig;
+        }
+        if (agr > maxAgr)
+        {
+            GameOver();
+        }
     }
 
     private void Awake()
@@ -192,7 +205,7 @@ public class DedEngine : MonoBehaviour
         up = true;
         _transform = GetComponent<Transform>();
         actions = new List<ICommand>();
-        agr = maxAgr;
+        agr = 0;
     }
     private void OnTriggerEnter(Collider other)
     {
@@ -203,6 +216,11 @@ public class DedEngine : MonoBehaviour
             tele.y = item.twinTeleport.transform.position.y;
             Debug.Log(tele);
         }
+    }
+    public void GameOver()
+    {
+        GameOverPanel.SetActive(true);
+        Invoke("StopTime", 0);
     }
 
     //private void OnTriggerExit(Collider other)
