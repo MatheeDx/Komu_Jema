@@ -15,6 +15,7 @@ public class DedEngine : MonoBehaviour
    [SerializeField] private Image TriggerMoment;
     public GameObject GameOverPanel;
     float trig;
+    [SerializeField] int lvl;
     public interface ICommand
     {
         public void Execute();
@@ -143,7 +144,7 @@ public class DedEngine : MonoBehaviour
         Teleport tele;
     }
 
-    private IEnumerator Instructions()
+    private IEnumerator Instructions1()
     {
         actions.Add(new Wait(_transform, 3));
         actions.Add(new MoveToInSec(_transform, -1, 9f));
@@ -154,6 +155,30 @@ public class DedEngine : MonoBehaviour
         actions.Add(new MoveToInSec(_transform, 1, 10f));
         actions.Add(new UseStairs(_transform));
         actions.Add(new MoveToInSec(_transform, 1, 9f));
+
+
+        while (true)
+            foreach (ICommand act in actions)
+            {
+                act.Execute();
+                yield return new WaitForSeconds(act.T);
+            }
+    }
+
+    private IEnumerator Instructions2()
+    {
+        actions.Add(new Wait(_transform, 3));
+        actions.Add(new MoveToInSec(_transform, -1, 9f));
+        actions.Add(new Wait(_transform, 2));
+        actions.Add(new UseStairs(_transform));
+        actions.Add(new MoveToInSec(_transform, 1, 3f));
+        actions.Add(new Wait(_transform, 3));
+        actions.Add(new MoveToInSec(_transform, -1, 3f));
+        actions.Add(new MoveToInSec(_transform, -1, 5f));
+        actions.Add(new Wait(_transform, 3));
+        actions.Add(new MoveToInSec(_transform, 1, 5f));
+        actions.Add(new UseStairs(_transform));
+        actions.Add(new MoveToInSec(_transform, 1f, 9f));
 
 
         while (true)
@@ -183,7 +208,10 @@ public class DedEngine : MonoBehaviour
 
     private void Start()
     {
-        StartCoroutine(Instructions());
+        if(lvl == 1)
+            StartCoroutine(Instructions1());
+        else if(lvl == 2)
+            StartCoroutine(Instructions2());
     }
 
     private void Update()

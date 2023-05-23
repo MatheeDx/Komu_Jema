@@ -39,7 +39,7 @@ public class Window : MonoBehaviour, Item
     {
         button = new GameObject(name);
         TextMeshPro text = button.AddComponent<TextMeshPro>();
-        text.text = "Сбой в матрице!";
+        text.text = "ЕМАЕ!";
         button.transform.SetParent(_transform);
         text.alignment = TextAlignmentOptions.Center;
         text.color = Color.white;
@@ -51,6 +51,7 @@ public class Window : MonoBehaviour, Item
     {
         _transform = GetComponent<Transform>();
         player = GameObject.FindGameObjectWithTag("Player");
+        transform.GetComponent<Renderer>().material.color = Color.red;
     }
 
     GameObject player;
