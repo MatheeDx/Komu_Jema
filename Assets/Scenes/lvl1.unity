@@ -8993,6 +8993,10 @@ PrefabInstance:
       value: 0.047109246
       objectReference: {fileID: 0}
     - target: {fileID: 4875500532087226305, guid: 5617532ef5af8c848a39472ff22d62a8, type: 3}
+      propertyPath: lvl
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4875500532087226305, guid: 5617532ef5af8c848a39472ff22d62a8, type: 3}
       propertyPath: maxAgr
       value: 10
       objectReference: {fileID: 0}
