@@ -7,19 +7,22 @@ public class StartAnimation : MonoBehaviour
     public Animation anim;
     public float time;
     public GameObject target;
-    private void Start()
-    {
-        target.SetActive(false);
-        PuskAnim();
-    }
     public void Anima()
     {
         anim = GetComponent<Animation>();
         anim.Play();
         target.SetActive(true);
     }
-    void PuskAnim()
+    public void PuskAnim()
     {
         Invoke("Anima", time);
+    }
+    public void DeletObject()
+    {
+        target.SetActive(false);
+    }
+    public void DeletObject111()
+    {
+        Invoke("DeletObject", time);
     }
 }
