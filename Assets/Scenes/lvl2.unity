@@ -12852,7 +12852,7 @@ GameObject:
   - component: {fileID: 1854775048}
   m_Layer: 0
   m_Name: Verevka
-  m_TagString: Untagged
+  m_TagString: Item
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

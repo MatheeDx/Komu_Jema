@@ -16,6 +16,12 @@ public class DedEngine : MonoBehaviour
     public GameObject GameOverPanel;
     float trig;
     [SerializeField] int lvl;
+
+    [SerializeField] ZoneProp zone1;
+    [SerializeField] ZoneProp zone2;
+    [SerializeField] ZoneProp zone3;
+    [SerializeField] Transform player;
+
     public interface ICommand
     {
         public void Execute();
@@ -41,6 +47,7 @@ public class DedEngine : MonoBehaviour
         {
             
         }
+
         float timer;
         Transform m_Transform;
     }
@@ -189,21 +196,28 @@ public class DedEngine : MonoBehaviour
             }
     }
 
-    private void Detector()
+    private void Detector(float impact = 0)
     {
+        if (zone1.onCol)
+            impact = zone1.impact;
+        else if (zone2.onCol)
+            impact = zone2.impact;
+        else if (zone3.onCol)
+            impact = zone3.impact;
+        else
+            impact = 0;
+
         RaycastHit hit;
-        if (Physics.SphereCast(_transform.position + new Vector3(0, 2, 0), 3f, _transform.forward, out hit, Mathf.Infinity)) {
-            if(hit.collider.tag == "Player")
-            {
-                Debug.Log(hit.distance);
-                agr += agrSpeed * (hit.distance / dist) * Time.deltaTime;
-            }
-        } else {
-            if(agr > 0)
-            {
-                agr -= 1 * Time.deltaTime;
-            }
+        if (Physics.Linecast(_transform.position + new Vector3(0, 3, 0), player.position + new Vector3(0, 3, 0), out hit))
+        {
+            if(hit.collider.tag != "barrier")
+                if (impact > 0)
+                    agr += agrSpeed * impact * Time.deltaTime;
+                else
+                    if (agr > 0)
+                        agr -= 1 * Time.deltaTime;
         }
+        
     }
 
     private void Start()
@@ -213,6 +227,8 @@ public class DedEngine : MonoBehaviour
         else if(lvl == 2)
             StartCoroutine(Instructions2());
     }
+
+    
 
     private void Update()
     {
