@@ -12,20 +12,17 @@ public class Pause : MonoBehaviour
     public float timer;
     public GameObject GameOverPanel;
     public GameObject HUD;
-    public GameObject ZTM;
     [SerializeField] private float time;
     [SerializeField] private Image timerImage;
     [SerializeField] private Text timerText;
     private float _timeLeft = 0f;
     void Start()
     {
-        ZTM.SetActive(true);
         HUD.SetActive(true);
         GameOverPanel.SetActive(false);
         PausePanel.SetActive(false);
         _timeLeft = time;
         Invoke("StTimer", timer);
-        Invoke("Zatem", timer);
     }
     private IEnumerator StartTimer()
     {
@@ -104,9 +101,5 @@ public class Pause : MonoBehaviour
     void PlayTime()
     {
         Time.timeScale = 1f;
-    }
-    void Zatem()
-    {
-        ZTM.SetActive(false);
     }
 }
