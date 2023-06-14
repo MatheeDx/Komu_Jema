@@ -12,6 +12,7 @@ public class ItemPickup : MonoBehaviour, Item
     public string _temp;
     public Vector3 btnPos;
     public QItem _item;
+    [SerializeField] GameObject load;
 
     public void Use()
     {
@@ -30,8 +31,7 @@ public class ItemPickup : MonoBehaviour, Item
             else
                 button.GetComponent<TextMeshPro>().text = _temp;          
         }
-            
-        
+        Sleep();
     }
 
     bool ItemCheck(QItem item)
@@ -57,6 +57,11 @@ public class ItemPickup : MonoBehaviour, Item
             Destroy(button);
             button = null;
         }
+        if (loadBtn != null)
+        {
+            Destroy(loadBtn);
+            loadBtn = null;
+        }
     }
 
     public void Alarm()
@@ -71,6 +76,16 @@ public class ItemPickup : MonoBehaviour, Item
         button.transform.localPosition = btnPos;
     }
 
+    public void Loading()
+    {
+        loadBtn = Instantiate(load);
+
+
+        loadBtn.transform.SetParent(_transform);
+
+        loadBtn.transform.localPosition = new Vector3(0, 0, 0) + btnPos;
+    }
+
     private void Awake()
     {
         _transform = GetComponent<Transform>();
@@ -78,8 +93,7 @@ public class ItemPickup : MonoBehaviour, Item
     }
 
     GameObject button = null;
+    GameObject loadBtn = null;
     Transform _transform;
 
 }
-
-

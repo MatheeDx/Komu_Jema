@@ -7,6 +7,7 @@ public class ItemCube : MonoBehaviour, Item
 {
     [SerializeField] Animator anim = null;
     [SerializeField] Vector3 btnPos;
+    [SerializeField] GameObject load;
     bool isCovering;
     
     public void Use()
@@ -40,6 +41,11 @@ public class ItemCube : MonoBehaviour, Item
             Destroy(button);
             button = null;
         }
+        else if (loadBtn != null)
+        {
+            Destroy(loadBtn);
+            loadBtn = null;
+        }
     }
 
     public void Alarm()
@@ -54,6 +60,16 @@ public class ItemCube : MonoBehaviour, Item
         button.transform.localPosition = new Vector3(0, 0, 0) + btnPos;
     }
 
+    public void Loading()
+    {
+        loadBtn = Instantiate(load);
+
+
+        loadBtn.transform.SetParent(_transform);
+
+        loadBtn.transform.localPosition = new Vector3(0, 0.5f, 0) + btnPos;
+    }
+
     private void Awake()
     {
         _transform = GetComponent<Transform>();
@@ -63,5 +79,6 @@ public class ItemCube : MonoBehaviour, Item
 
     GameObject player;
     GameObject button = null;
+    GameObject loadBtn = null;
     Transform _transform;
 }

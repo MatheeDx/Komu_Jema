@@ -205,17 +205,23 @@ public class DedEngine : MonoBehaviour
         else if (zone3.onCol)
             impact = zone3.impact;
         else
-            impact = 0;
+            if(agr > 0)
+                impact = -1;
+            else
+                impact = 0;
 
+        Debug.DrawLine(_transform.position + new Vector3(0, 3, 0), player.position + new Vector3(0, 3, 0));
         RaycastHit hit;
         if (Physics.Linecast(_transform.position + new Vector3(0, 3, 0), player.position + new Vector3(0, 3, 0), out hit))
         {
-            if(hit.collider.tag != "barrier")
-                if (impact > 0)
-                    agr += agrSpeed * impact * Time.deltaTime;
-                else
-                    if (agr > 0)
-                        agr -= 1 * Time.deltaTime;
+            if (hit.collider.tag == "barrier")
+            {
+                Debug.Log("AAAAAAAAAAAAAAAAAAAa");
+                return;
+            }
+                
+            agr += agrSpeed * impact * Time.deltaTime;
+
         }
         
     }

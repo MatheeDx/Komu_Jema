@@ -1,10 +1,9 @@
 using System.Collections;
-using System.Collections.Generic;
+using UnityEngine.UI;
 using UnityEngine;
 
 public class PlayerCore : MonoBehaviour
 {
-    public GameObject playerrr;
     [SerializeField] float speedMove;
     [SerializeField] float speedRot;
     [SerializeField] Camera _cam;
@@ -18,7 +17,6 @@ public class PlayerCore : MonoBehaviour
     public bool isMoving;
     bool isUsing;
     Item activeItem;
-    float questItem;
 
     void FixedUpdate()
     {
@@ -81,12 +79,21 @@ public class PlayerCore : MonoBehaviour
         if (activeItem != null && !isUsing)
         {
             anim.SetTrigger("isUsing");
+            activeItem.Loading();
             isMoving = false;
             isUsing = true;
-            yield return new WaitForSeconds(1.5f);
+            for (float i = 0; i <= 0.15f; i += Time.deltaTime)
+            {
+                _transform.rotation = Quaternion.Lerp(_transform.rotation, Quaternion.Euler(0, 0, 0), i*10);
+                yield return new WaitForSeconds(Time.deltaTime);
+            }
+            yield return new WaitForSeconds(1.4f);
+            
             isMoving = true;
             isUsing = false;
             activeItem.Use();
+            activeItem.Sleep();
+            activeItem.Sleep();
         }
     }
 

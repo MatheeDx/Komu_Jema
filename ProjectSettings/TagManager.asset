@@ -6,6 +6,7 @@ TagManager:
   tags:
   - Item
   - ded
+  - barrier
   layers:
   - Default
   - TransparentFX

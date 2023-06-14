@@ -12,6 +12,7 @@ public class Gorshenev : MonoBehaviour, Item
     public Text tasks;
     public string _temp;
     public QItem _item;
+    [SerializeField] GameObject load;
 
 
     public void Use()
@@ -76,6 +77,16 @@ public class Gorshenev : MonoBehaviour, Item
         text.color = Color.white;
         text.fontSize = 10;
         button.transform.localPosition = new Vector3(0, 0, 0) + new Vector3(0, 0.005f, 0.01f);
+    }
+
+    public void Loading()
+    {
+        button = Instantiate(load);
+
+
+        button.transform.SetParent(_transform);
+
+        button.transform.localPosition = new Vector3(0, 0, 0) + btnPos;
     }
 
     private void Awake()
