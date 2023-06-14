@@ -94,6 +94,11 @@ public class Pause : MonoBehaviour
         PlayTime();
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
     }
+    public void MainMenu()
+    {
+        PlayTime();
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex*0);
+    }
     void StopTime()
     {
         Time.timeScale = 0f;
