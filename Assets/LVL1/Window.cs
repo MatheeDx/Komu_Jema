@@ -6,13 +6,10 @@ using UnityEngine.UI;
 
 public class Window : MonoBehaviour, Item
 {
-    [SerializeField] Animator anim = null;
     [SerializeField] Vector3 btnPos;
     [SerializeField] GameObject win;
-    public GameObject svet;
     public Text tasks;
     [SerializeField] GameObject load;
-    public GameObject winplane;
 
     public void Use()
     {
@@ -22,11 +19,9 @@ public class Window : MonoBehaviour, Item
     IEnumerator Win()
     {
         transform.GetComponent<Renderer>().material.color = Color.white;
-        svet.gameObject.SetActive(false);
         tasks.text = "1/1";
-        yield return new WaitForSeconds(4);
+        yield return new WaitForSeconds(2);
         win.SetActive(true);
-        winplane.SetActive(true);
     }
 
     public void Sleep()

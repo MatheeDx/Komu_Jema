@@ -5894,10 +5894,10 @@ MonoBehaviour:
   PausePanel: {fileID: 753287684}
   PausePanelDownBar: {fileID: 2057338197}
   OptionsPanel: {fileID: 768351303}
-  timer: 12
+  timer: 5
   GameOverPanel: {fileID: 1726145886}
   HUD: {fileID: 1479815119}
-  time: 150
+  time: 180
   timerImage: {fileID: 1383460851}
   timerText: {fileID: 495690515}
 --- !u!114 &715381614
@@ -12102,13 +12102,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f319b8e2fc52fe14daac56174e64cf55, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  anim: {fileID: 0}
   btnPos: {x: 0, y: 0, z: 0}
-  win: {fileID: 0}
-  svet: {fileID: 0}
+  win: {fileID: 108439664}
   tasks: {fileID: 807520560}
   load: {fileID: 3556796621001197780, guid: 30a8ad917d9563d4a8433b594cd0e564, type: 3}
-  winplane: {fileID: 0}
 --- !u!65 &1648915620
 BoxCollider:
   m_ObjectHideFlags: 0

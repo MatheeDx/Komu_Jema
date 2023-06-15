@@ -6,7 +6,6 @@ using UnityEngine.UI;
 
 public class Gorshenev : MonoBehaviour, Item
 {
-    [SerializeField] Animator anim = null;
     [SerializeField] Vector3 btnPos;
     [SerializeField] GameObject win;
     public Text tasks;
@@ -54,7 +53,7 @@ public class Gorshenev : MonoBehaviour, Item
     IEnumerator Win()
     {
         tasks.text = "1/1";
-        yield return new WaitForSeconds(4);
+        yield return new WaitForSeconds(2);
         win.SetActive(true);
     }
 
