@@ -10716,7 +10716,7 @@ PrefabInstance:
       objectReference: {fileID: 6352957556611355143}
     - target: {fileID: 4875500532087226305, guid: 5617532ef5af8c848a39472ff22d62a8, type: 3}
       propertyPath: agrSpeed
-      value: 0
+      value: 3.14
       objectReference: {fileID: 0}
     - target: {fileID: 4875500532087226305, guid: 5617532ef5af8c848a39472ff22d62a8, type: 3}
       propertyPath: GameOverPanel
