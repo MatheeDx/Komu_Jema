@@ -206,7 +206,7 @@ public class DedEngine : MonoBehaviour
             impact = zone3.impact;
         else
             if(agr > 0)
-                impact = -1;
+                impact = -0.1f;
             else
                 impact = 0;
 

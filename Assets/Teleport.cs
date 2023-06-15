@@ -12,7 +12,7 @@ public class Teleport : MonoBehaviour, Item
     public void Use()
     {
         target.transform.GetComponent<AudioSource>().enabled = true;
-        player.transform.position = new Vector3(twinTeleport.transform.position.x, twinTeleport.transform.position.y, 1.3f);
+        player.transform.position = new Vector3(twinTeleport.transform.position.x, twinTeleport.transform.position.y, 1.5f);
         Invoke("sound", 1);
     }
 
