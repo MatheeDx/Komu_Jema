@@ -3017,6 +3017,7 @@ GameObject:
   - component: {fileID: 387720981}
   - component: {fileID: 387720980}
   - component: {fileID: 387720979}
+  - component: {fileID: 387720982}
   m_Layer: 5
   m_Name: exitt
   m_TagString: Untagged
@@ -3101,6 +3102,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 387720982}
+        m_TargetAssemblyTypeName: lvlproiden, Assembly-CSharp
+        m_MethodName: complete
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &387720980
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3139,6 +3152,20 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 387720977}
   m_CullTransparentMesh: 1
+--- !u!114 &387720982
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 387720977}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b03ea1b480f8f5643a91be26fec4609a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  lvll: 0
+  zamok: {fileID: 0}
 --- !u!4 &389738531 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 1f5539bdf10999449995231c29093288, type: 3}
@@ -4526,6 +4553,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 387720982}
+        m_TargetAssemblyTypeName: lvlproiden, Assembly-CSharp
+        m_MethodName: complete
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &641303357
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5409,6 +5448,7 @@ GameObject:
   - component: {fileID: 791188095}
   - component: {fileID: 791188094}
   - component: {fileID: 791188093}
+  - component: {fileID: 791188097}
   m_Layer: 5
   m_Name: ZtM
   m_TagString: Untagged
@@ -5501,6 +5541,20 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 791188091}
   m_CullTransparentMesh: 1
+--- !u!114 &791188097
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 791188091}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9b38c1c4253c3d942aab6e5c0c366117, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ztm: {fileID: 791188091}
+  time: 3
 --- !u!1 &803063307
 GameObject:
   m_ObjectHideFlags: 0
@@ -17160,8 +17214,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   anim: {fileID: 0}
   btnPos: {x: 0, y: 0, z: 0}
-  win: {fileID: 0}
-  tasks: {fileID: 0}
+  win: {fileID: 1154723924}
+  tasks: {fileID: 1012207458}
   _temp: "\u041D\u0443\u0436\u043D\u043E \u0441\u043B\u043E\u0432\u0438\u0442\u044C
     \u0433\u043E\u0440\u0448\u043E\u043A"
   _item: {fileID: 11400000, guid: 43c59e84907acbf4781c88c68f936ea9, type: 2}

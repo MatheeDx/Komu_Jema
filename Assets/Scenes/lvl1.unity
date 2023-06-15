@@ -3245,6 +3245,7 @@ GameObject:
   - component: {fileID: 331582189}
   - component: {fileID: 331582188}
   - component: {fileID: 331582187}
+  - component: {fileID: 331582191}
   m_Layer: 5
   m_Name: ZtM
   m_TagString: Untagged
@@ -3337,6 +3338,20 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 331582185}
   m_CullTransparentMesh: 1
+--- !u!114 &331582191
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 331582185}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9b38c1c4253c3d942aab6e5c0c366117, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ztm: {fileID: 331582185}
+  time: 3
 --- !u!1 &341136585
 GameObject:
   m_ObjectHideFlags: 0
@@ -4898,6 +4913,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 2064838959}
+        m_TargetAssemblyTypeName: lvlproiden, Assembly-CSharp
+        m_MethodName: complete
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &558316403
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5830,7 +5857,6 @@ GameObject:
   - component: {fileID: 766584745}
   - component: {fileID: 766584744}
   - component: {fileID: 766584743}
-  - component: {fileID: 766584747}
   m_Layer: 5
   m_Name: ext
   m_TagString: Untagged
@@ -6035,18 +6061,6 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 766584747}
-        m_TargetAssemblyTypeName: lvlproiden, Assembly-CSharp
-        m_MethodName: complete
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
 --- !u!114 &766584745
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6085,20 +6099,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 766584741}
   m_CullTransparentMesh: 1
---- !u!114 &766584747
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 766584741}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b03ea1b480f8f5643a91be26fec4609a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  lvll: 0
-  zamok: {fileID: 0}
 --- !u!1 &768351303
 GameObject:
   m_ObjectHideFlags: 0
@@ -11498,8 +11498,9 @@ MonoBehaviour:
   btnPos: {x: 0, y: 0, z: 0}
   win: {fileID: 0}
   svet: {fileID: 0}
-  tasks: {fileID: 0}
+  tasks: {fileID: 807520560}
   load: {fileID: 3556796621001197780, guid: 30a8ad917d9563d4a8433b594cd0e564, type: 3}
+  winplane: {fileID: 0}
 --- !u!65 &1648915620
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -14464,6 +14465,7 @@ GameObject:
   - component: {fileID: 2064838958}
   - component: {fileID: 2064838957}
   - component: {fileID: 2064838956}
+  - component: {fileID: 2064838959}
   m_Layer: 5
   m_Name: exitt
   m_TagString: Untagged
@@ -14548,6 +14550,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 2064838959}
+        m_TargetAssemblyTypeName: lvlproiden, Assembly-CSharp
+        m_MethodName: complete
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &2064838957
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -14586,6 +14600,20 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2064838954}
   m_CullTransparentMesh: 1
+--- !u!114 &2064838959
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2064838954}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b03ea1b480f8f5643a91be26fec4609a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  lvll: 0
+  zamok: {fileID: 0}
 --- !u!1 &2078109892
 GameObject:
   m_ObjectHideFlags: 0

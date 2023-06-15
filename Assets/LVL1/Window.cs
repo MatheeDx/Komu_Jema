@@ -12,6 +12,7 @@ public class Window : MonoBehaviour, Item
     public GameObject svet;
     public Text tasks;
     [SerializeField] GameObject load;
+    public GameObject winplane;
 
     public void Use()
     {
@@ -25,6 +26,7 @@ public class Window : MonoBehaviour, Item
         tasks.text = "1/1";
         yield return new WaitForSeconds(4);
         win.SetActive(true);
+        winplane.SetActive(true);
     }
 
     public void Sleep()

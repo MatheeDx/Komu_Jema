@@ -4,19 +4,19 @@ using UnityEngine;
 
 public class WINWIN : MonoBehaviour
 {
-    // Start is called before the first frame update
+    public GameObject winwin;
+    public float time;
     void Start()
+    {
+        Invoke("vkl", time);
+
+    }
+    public void vkl()
     {
         int locked = PlayerPrefs.GetInt("lvl");
         if (locked == 6)
         {
-            Debug.Log("С победой");
+            winwin.SetActive(true);
         }
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
     }
 }
