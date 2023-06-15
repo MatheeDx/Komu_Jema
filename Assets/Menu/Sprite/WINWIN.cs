@@ -14,7 +14,7 @@ public class WINWIN : MonoBehaviour
     public void vkl()
     {
         int locked = PlayerPrefs.GetInt("lvl");
-        if (locked == 6)
+        if (locked == 2)
         {
             winwin.SetActive(true);
         }
