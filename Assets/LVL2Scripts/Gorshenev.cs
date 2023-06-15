@@ -53,8 +53,8 @@ public class Gorshenev : MonoBehaviour, Item
     IEnumerator Win()
     {
         tasks.text = "1/1";
-        yield return new WaitForSeconds(2);
         win.SetActive(true);
+        yield return new WaitForSeconds(2);
     }
 
     public void Sleep()
@@ -75,7 +75,7 @@ public class Gorshenev : MonoBehaviour, Item
         text.alignment = TextAlignmentOptions.Center;
         text.color = Color.white;
         text.fontSize = 10;
-        button.transform.localPosition = new Vector3(0, 0, 0) + new Vector3(0, 0.005f, 0.01f);
+        button.transform.localPosition = new Vector3(0, 0, 0) + btnPos;
     }
 
     public void Loading()
