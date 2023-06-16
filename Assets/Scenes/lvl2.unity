@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.18316247, g: 0.22672808, b: 0.29436713, a: 1}
+  m_IndirectSpecularColor: {r: 0.1831621, g: 0.22672734, b: 0.29436624, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -310,7 +310,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 15171305}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -12.277036, y: 13.172705, z: -120.04545}
+  m_LocalPosition: {x: -12.277036, y: 13.172705, z: -120.14}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -10500,7 +10500,7 @@ PrefabInstance:
       objectReference: {fileID: 6352957556611355143}
     - target: {fileID: 4875500532087226305, guid: 5617532ef5af8c848a39472ff22d62a8, type: 3}
       propertyPath: agrSpeed
-      value: 3.44
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 4875500532087226305, guid: 5617532ef5af8c848a39472ff22d62a8, type: 3}
       propertyPath: GameOverPanel
@@ -10524,7 +10524,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4875500532087226309, guid: 5617532ef5af8c848a39472ff22d62a8, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 1.39
+      value: 1.26
       objectReference: {fileID: 0}
     - target: {fileID: 4875500532087226309, guid: 5617532ef5af8c848a39472ff22d62a8, type: 3}
       propertyPath: m_LocalRotation.w
@@ -17472,7 +17472,7 @@ MonoBehaviour:
   speedMove: 5
   speedRot: 5.41
   _cam: {fileID: 2137754824}
-  camPos: {x: 0, y: 6.3, z: -24}
+  camPos: {x: 0, y: 6.3, z: -26}
   camSpeed: 2
   source: {fileID: 704462603}
   clip: {fileID: 0}
